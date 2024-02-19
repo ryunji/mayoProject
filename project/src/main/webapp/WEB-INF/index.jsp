@@ -76,7 +76,7 @@
     </main>
     <footer class="footer">
         <section>
-            <h1 class="d:none">알랜드 회사정보</h1>
+            <h1 class="d:none">Mayo 회사정보</h1>
             <dl>            
                 <dt class="">사업자 등록정보</dt>
                 <dd>123-45-67</dd>
