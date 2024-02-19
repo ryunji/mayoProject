@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 구현하고자 하는 인터페이스의 전체 경로와 인터페이스 명을 네임스페이스에 적는다. -->  
+<mapper namespace="kr.co.mayo.web.repository.MenuRepository">
+  
+	<resultMap id="menuMap" type="kr.co.rland.web.entity.Menu">
+  		<result property="korName" column="KOR_NAME"/>
+  		<result property="engName" column="ENG_NAME"/>
+	</resultMap> 
+  
+  <!-- 1.여기서 id(아이디)는 인터페이스에서 호출하던 함수명을 적는다. -->
+  <!-- 2.resultType이 처음에는 Menu 클래스 형태였다가 지금은 resultMap중
+		 menuMap을 사용하는 것으로 변경되었는데 이 부분은 값을 돌려줄 때 어떻게 보낼 것인지를 정하는 것인 것 같다. -->
+  <!-- * 확인해 볼 것 : Alias가 모두 대문자일때도 문제 없이 출력하는지 확인할 것. -->
+	
+ <!-- SELECT  ID
+      		, KOR_NAME KORNAME
+      		, ENG_NAME ENGNAME
+      		, PRICE
+      		, "LIKE"
+      		, IMG
+      		, REG_DATE REGDATE
+        FROM  MENU -->
+	
+<!-- <select id="findById" resultType="kr.co.rland.web.entity.Menu"> -->
+	 <select id="findAll" resultMap="menuMap">
+	  	SELECT  *
+	      FROM  menu
+	 </select>
+  
+  <!-- 구현하게 될 녀석의 이름 -->
+  <select id="findById" resultMap="menuMap">
+      SELECT  *
+        FROM  menu
+       WHERE  ID = #{id}
+  </select>
+</mapper> 
