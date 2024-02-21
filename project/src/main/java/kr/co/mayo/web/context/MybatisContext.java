@@ -10,9 +10,10 @@ public class MybatisContext {
 
 	private static SqlSessionFactory sqlSessionFactory;	//속성
 	
-	
+	//스태틱 공간
 	static {
 		
+		System.out.println("Mybatis Contex static 초기화 공간 진입");
 		String resource ="mybatis-config.xml";
 		try {
 			
@@ -22,5 +23,7 @@ public class MybatisContext {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 }
