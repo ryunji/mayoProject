@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc 
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+   <!-- beans와 mvc를 한 방에서 같이 쓰도록 설정 -->
+   
+   <!-- 1.스프링이 메모리에 올리기 위한 대상을 스캔할 수 있는 범위를 지정 함. -->
+   <!-- 2.전부를 대상으로 하면 비효율적이니까 -->
+   <context:component-scan base-package="kr.co.mayo.web"></context:component-scan>
+</beans>
