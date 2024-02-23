@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+	        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	 <!-- spring-config.xml은 DI(의존성 주입)을 사용하기 위해 사용되는 설정파일이다 -->
+	 <!-- 스프링이 이쪽, spring-config.xml을 읽으면 container에 담아준다. -->
+     <!-- bean definitions here -->
+	 <bean id="menu" class="kr.co.rland.web.entity.Menu"/>
+ 
+	 <!-- 1. id를 사용할 경우(일반적인 경우로 하위로 property 설정을 갖지 않을 경우)-->
+	 <bean id="menuRepository" class="kr.co.rland.web.repository.JDBCMenurepository"/>
+	 
+	 <!-- 2.1. 앞에 1번을 아래와 같이 쓸 수도 있다(하위로 property 설정을 가져야 하는 경우). -->
+	 <!-- 2.2. 규영님의 설명 : 1번과 같이 우리가 하위 내용을 따로 따로 쓸수 있는데, 그냥 하나로만 쓰는 방법이 아래와 같다. -->
+	 <!-- 2.2. 			   MenuServiceImp에서 JDBCMenuRepository 객체를 생성해주는 일을 코드 상에서 했는데 그 설정을 여기 Spring-config.xml에서 처리하는 것을 -->
+	 <!-- 2.2. 			   아래와 같이 하나의 bean 설정으로 처리할 수 있다. 이때 property가 사용되는 것이다. -->
+	 <!-- <bean id="service" class="kr.co.rland.web.service.MenuServiceImp">
+		 <property name="repository">
+			 <bean id="menuRepository" class="kr.co.rland.web.repository.JDBCMenuRepository"/>
+		 </property>
+	 </bean> -->
+	 <!-- 객체(다른 빈 : 다른 빈의 ID를 지정하여 해당 빈을 참조할 수 있도록 한다)는 id가 아닌 ref를 사용한다. -->
+</beans>
