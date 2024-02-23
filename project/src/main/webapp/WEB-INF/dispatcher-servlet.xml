@@ -10,6 +10,8 @@
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc 
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+   <!-- 주인장에게는 context를 쓰지 않는다. -->
+   <!-- 안 그렇게 보이지만 키와 값으로 이루어진 것이다. -->
    <!-- beans와 mvc를 한 방에서 같이 쓰도록 설정 -->
    
    <!-- 1.스프링이 메모리에 올리기 위한 대상을 스캔할 수 있는 범위를 지정 함. -->

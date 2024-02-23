@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 //WebServlet이 import 되려면 자바 빌드 패스에 톰캣 라이브러리가 연동되어있어야 한다.
-@WebServlet("/index")
-public class indexController extends HttpServlet{
+//@WebServlet("/index")
+public class indexServletController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
